@@ -1,0 +1,172 @@
+entity KategoriReksadana {
+	kodeKategori String maxlength(10),
+    namaKategori String maxlength(50),
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity JenisReksadana {
+	kodeJenis String maxlength(10),
+    namaJenis String maxlength(50),
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity ReksadanaAssetAllocation {
+	valueDate LocalDate,
+    instrumentType String maxlength(1),
+    assetValue Double,
+    
+    reksadanaId Long,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity Reksadana {
+	kodeReksadana String maxlength(10),
+    namaReksadana String maxlength(50),
+    isinCode String maxlength(20),
+    tanggalPeluncuran LocalDate,
+    aum Double,
+    unit Double,
+    lastPosDate LocalDate,
+    biayaPembelian Double,
+    biayaPenjualan Double,
+    biayaSwitching Double,
+    notes String,
+    status String maxlength(1),
+    
+    currencyId Long,
+    issuerId Long,
+    custodyId Long,
+    jenisReksadanaId Long,
+    kategoriReksadanaId Long,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity ReksadanaAsset {
+	valueDate LocalDate,
+    aum Double,
+    unit Double,
+    
+    reksadanaId Long,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity ReksadanaSwitching {
+	orderNo String maxlength(10),
+    orderTime ZonedDateTime,
+    approveTime ZonedDateTime,
+    amount Double,
+    charges Double,
+    netAmount Double,
+    status String maxlength(1),
+    
+    accountId Long,
+    reksadanaId Long,
+    targetReksadanaId Long,
+    currencyId Long,
+    buyOrderId Long,
+    sellOrderId Long,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity ReksadanaTransaction {
+	orderNo String maxlength(10),
+    orderTime ZonedDateTime,
+    approveTime ZonedDateTime,
+    orderType String maxlength(1),
+    unit Double,
+    amount Double,
+    charges Double,
+    netAmount Double,
+    status String maxlength(1),
+    
+    accountId Long,
+    reksadanaId Long,
+    currencyId Long,
+    switchOrderId Long,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+/*
+
+relationship OneToMany {
+	JenisReksadana to Reksadana
+}
+
+relationship OneToMany {
+	KategoriReksadana to Reksadana
+}
+
+relationship OneToMany {
+	Reksadana to ReksadanaAssetAllocation
+}
+
+relationship OneToMany {
+	Reksadana to ReksadanaTransaction
+}
+
+relationship OneToMany {
+	Reksadana to ReksadanaAsset
+}
+
+relationship OneToMany {
+	Reksadana to ReksadanaSwitching
+}
+
+relationship OneToMany {
+	Reksadana to ReksadanaSwitching
+}
+
+relationship OneToMany {
+	ReksadanaSwitching to ReksadanaTransaction
+}
+
+*/
+
+paginate ReksadanaSwitching with pagination
+paginate ReksadanaTransaction with pagination
+
+dto * with mapstruct
+
+service all with serviceImpl

@@ -1,0 +1,125 @@
+{
+    "name": "Reksadana",
+    "fields": [
+        {
+            "fieldName": "kodeReksadana",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "namaReksadana",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "isinCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "tanggalPeluncuran",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "aum",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "unit",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "lastPosDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "biayaPembelian",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "biayaPenjualan",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "biayaSwitching",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "notes",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1
+        },
+        {
+            "fieldName": "currencyId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "issuerId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "custodyId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "jenisReksadanaId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "kategoriReksadanaId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "createSystemDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "createDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createUserId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "lastModificationSystemDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "lastModificationDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastModificationUserId",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191113032119",
+    "entityTableName": "reksadana",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "investacoresvc",
+    "applications": "*",
+    "microserviceName": "investacoresvc"
+}

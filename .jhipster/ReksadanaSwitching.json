@@ -1,0 +1,101 @@
+{
+    "name": "ReksadanaSwitching",
+    "fields": [
+        {
+            "fieldName": "orderNo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "orderTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "approveTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "charges",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "netAmount",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1
+        },
+        {
+            "fieldName": "accountId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "reksadanaId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "targetReksadanaId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "currencyId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "buyOrderId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "sellOrderId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "createSystemDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "createDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createUserId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "lastModificationSystemDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "lastModificationDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastModificationUserId",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191113032121",
+    "entityTableName": "reksadana_switching",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "investacoresvc",
+    "applications": "*",
+    "microserviceName": "investacoresvc"
+}
