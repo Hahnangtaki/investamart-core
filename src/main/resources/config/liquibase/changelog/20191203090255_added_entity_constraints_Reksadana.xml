@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Reksadana.
+    -->
+    <changeSet id="20191203090255-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="jenis_reksadana_id"
+                                 baseTableName="reksadana"
+                                 constraintName="fk_reksadana_jenis_reksadana_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jenis_reksadana"/>
+
+        <addForeignKeyConstraint baseColumnNames="kategori_reksadana_id"
+                                 baseTableName="reksadana"
+                                 constraintName="fk_reksadana_kategori_reksadana_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="kategori_reksadana"/>
+
+    </changeSet>
+</databaseChangeLog>

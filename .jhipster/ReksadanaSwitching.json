@@ -1,0 +1,120 @@
+{
+    "name": "ReksadanaSwitching",
+    "fields": [
+        {
+            "fieldName": "orderNo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "orderTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "approveTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "charges",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "netAmount",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1
+        },
+        {
+            "fieldName": "accountId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "currencyId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "createSystemDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "createDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createUserId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "lastModificationSystemDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "lastModificationDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastModificationUserId",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "reksadanaTransaction",
+            "otherEntityRelationshipName": "switching",
+            "relationshipName": "switchingOrder"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "reksadanaTransaction",
+            "otherEntityRelationshipName": "buyOrder",
+            "relationshipName": "buy",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "reksadanaTransaction",
+            "otherEntityRelationshipName": "sellOrder",
+            "relationshipName": "sell",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "reksadana",
+            "otherEntityRelationshipName": "sourceRek",
+            "relationshipName": "source",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "reksadana",
+            "otherEntityRelationshipName": "targetRek",
+            "relationshipName": "target",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191203090256",
+    "entityTableName": "reksadana_switching",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "investacoresvc",
+    "applications": "*",
+    "microserviceName": "investacoresvc"
+}
