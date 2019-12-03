@@ -14,6 +14,31 @@
     <property name="uuidType" value="uuid" dbms="h2, postgresql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090251_added_entity_KategoriReksadana.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090252_added_entity_JenisReksadana.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090253_added_entity_ReksadanaAsset.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090254_added_entity_ReksadanaAssetAllocation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090255_added_entity_Reksadana.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090256_added_entity_ReksadanaSwitching.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090257_added_entity_ReksadanaTransaction.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090258_added_entity_AccountIndividu.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090259_added_entity_AccountInstitution.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090300_added_entity_AccountMember.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090301_added_entity_AccountAddress.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090302_added_entity_AccountAuthorize.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090303_added_entity_AccountBank.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090304_added_entity_AccountReksadana.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20191203090253_added_entity_constraints_ReksadanaAsset.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090254_added_entity_constraints_ReksadanaAssetAllocation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090255_added_entity_constraints_Reksadana.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090256_added_entity_constraints_ReksadanaSwitching.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090257_added_entity_constraints_ReksadanaTransaction.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090258_added_entity_constraints_AccountIndividu.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090259_added_entity_constraints_AccountInstitution.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090301_added_entity_constraints_AccountAddress.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090302_added_entity_constraints_AccountAuthorize.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090303_added_entity_constraints_AccountBank.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191203090304_added_entity_constraints_AccountReksadana.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

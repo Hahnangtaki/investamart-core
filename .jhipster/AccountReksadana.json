@@ -1,0 +1,52 @@
+{
+    "name": "AccountReksadana",
+    "fields": [
+        {
+            "fieldName": "costPrice",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "qtyOnHand",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "qtyDeposit",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "qtyWithdraw",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "profitLoss",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "reksadana",
+            "otherEntityRelationshipName": "accountReksadana",
+            "relationshipName": "reksadana",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "accountMember",
+            "otherEntityRelationshipName": "accountReksadana",
+            "relationshipName": "accountMember",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191203090304",
+    "entityTableName": "account_reksadana",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "investacoresvc",
+    "applications": "*",
+    "microserviceName": "investacoresvc"
+}

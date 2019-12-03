@@ -1,0 +1,65 @@
+{
+    "name": "ReksadanaAssetAllocation",
+    "fields": [
+        {
+            "fieldName": "valueDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "instrumentType",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1
+        },
+        {
+            "fieldName": "assetValue",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "createSystemDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "createDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createUserId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "lastModificationSystemDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "lastModificationDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastModificationUserId",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "reksadana",
+            "otherEntityRelationshipName": "reksadanaAssetAllocation",
+            "relationshipName": "reksadana",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191203090254",
+    "entityTableName": "reksadana_asset_allocation",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "investacoresvc",
+    "applications": "*",
+    "microserviceName": "investacoresvc"
+}
