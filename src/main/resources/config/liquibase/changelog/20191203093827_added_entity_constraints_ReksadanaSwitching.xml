@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity ReksadanaSwitching.
+    -->
+    <changeSet id="20191203093827-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="order_buy_id"
+                                 baseTableName="reksadana_switching"
+                                 constraintName="fk_reksadana_switching_order_buy_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="reksadana_transaction"/>
+
+        <addForeignKeyConstraint baseColumnNames="order_sell_id"
+                                 baseTableName="reksadana_switching"
+                                 constraintName="fk_reksadana_switching_order_sell_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="reksadana_transaction"/>
+
+        <addForeignKeyConstraint baseColumnNames="reksa_source_id"
+                                 baseTableName="reksadana_switching"
+                                 constraintName="fk_reksadana_switching_reksa_source_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="reksadana"/>
+
+        <addForeignKeyConstraint baseColumnNames="reksa_target_id"
+                                 baseTableName="reksadana_switching"
+                                 constraintName="fk_reksadana_switching_reksa_target_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="reksadana"/>
+
+    </changeSet>
+</databaseChangeLog>

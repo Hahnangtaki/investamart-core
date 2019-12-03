@@ -1,0 +1,176 @@
+{
+    "name": "Reksadana",
+    "fields": [
+        {
+            "fieldName": "kodeReksadana",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "namaReksadana",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 100
+        },
+        {
+            "fieldName": "isinCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 20
+        },
+        {
+            "fieldName": "tanggalPeluncuran",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "aum",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "unit",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "lastPosDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "biayaPembelian",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "biayaPenjualan",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "biayaSwitching",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "notes",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1
+        },
+        {
+            "fieldName": "nav",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "barometer",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "currencyId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "issuerId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "custodyId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "createSystemDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "createDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createUserId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "lastModificationSystemDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "lastModificationDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastModificationUserId",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "reksadanaAssetAllocation",
+            "otherEntityRelationshipName": "reksadana",
+            "relationshipName": "reksadanaAssetAllocation"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "reksadanaTransaction",
+            "otherEntityRelationshipName": "reksadana",
+            "relationshipName": "reksadanaTransaction"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "reksadanaAsset",
+            "otherEntityRelationshipName": "reksadana",
+            "relationshipName": "reksadanaAsset"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "reksadanaSwitching",
+            "otherEntityRelationshipName": "reksaSource",
+            "relationshipName": "sourceRek"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "reksadanaSwitching",
+            "otherEntityRelationshipName": "reksaTarget",
+            "relationshipName": "targetRek"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "accountReksadana",
+            "otherEntityRelationshipName": "reksadana",
+            "relationshipName": "accountReksadana"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "jenisReksadana",
+            "otherEntityRelationshipName": "reksadana",
+            "relationshipName": "jenisReksadana",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "kategoriReksadana",
+            "otherEntityRelationshipName": "reksadana",
+            "relationshipName": "kategoriReksadana",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191203093826",
+    "entityTableName": "reksadana",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "investacoresvc",
+    "applications": "*",
+    "microserviceName": "investacoresvc"
+}
