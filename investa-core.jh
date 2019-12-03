@@ -1,0 +1,412 @@
+entity KategoriReksadana {
+	kodeKategori String maxlength(10),
+    namaKategori String maxlength(50),
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity JenisReksadana {
+	kodeJenis String maxlength(10),
+    namaJenis String maxlength(50),
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity ReksadanaAsset {
+	valueDate LocalDate,
+    aum BigDecimal, //(18,4)
+    unit BigDecimal, //(18,4)
+    
+    //Tambahan
+    nav BigDecimal, //(18,4)
+    
+    //reksadanaId Long,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity ReksadanaAssetAllocation {
+	valueDate LocalDate,
+    instrumentType String maxlength(1),
+    assetValue BigDecimal, //(18,4)
+    
+    //reksadanaId Long,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity Reksadana {
+	//default
+	kodeReksadana String maxlength(20),
+    namaReksadana String maxlength(100),
+    isinCode String maxlength(20),
+    tanggalPeluncuran LocalDate,
+    aum BigDecimal, //(18,4)
+    unit BigDecimal, //(18,4)
+    lastPosDate LocalDate,
+    biayaPembelian BigDecimal, //(18,4)
+    biayaPenjualan BigDecimal, //(18,4)
+    biayaSwitching BigDecimal, //(18,4)
+    notes String,
+    status String maxlength(1),
+    
+    //Tambahan
+    nav BigDecimal, //(18,4)
+    
+    //desain
+    barometer Double,
+    
+    currencyId Long,
+    issuerId Long,
+    custodyId Long,
+    //jenisReksadanaId Long,
+    //kategoriReksadanaId Long,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity ReksadanaSwitching {
+	orderNo String maxlength(10),
+    orderTime ZonedDateTime,
+    approveTime ZonedDateTime,
+    amount BigDecimal, //(18,4)
+    charges BigDecimal, //(18,4)
+    netAmount BigDecimal, //(18,4)
+    status String maxlength(1),
+    
+    accountId Long,
+    //reksadanaId Long,
+    //targetReksadanaId Long,
+    currencyId Long,
+    //buyOrderId Long,
+    //sellOrderId Long,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity ReksadanaTransaction {
+	orderNo String maxlength(10),
+    orderTime ZonedDateTime,
+    approveTime ZonedDateTime,
+    orderType String maxlength(1),
+    unit BigDecimal, //(18,4)
+    amount BigDecimal, //(18,4)
+    charges BigDecimal, //(18,4)
+    netAmount BigDecimal, //(18,4)
+    status String maxlength(1),
+    
+    accountId Long,
+    //reksadanaId Long,
+    currencyId Long,
+    //switchOrderId Long,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity AccountIndividu {
+	sid String maxlength(15),
+    firstName String maxlength(35),
+    middleName String maxlength(35),
+    lastName String maxlength(35),
+    nationalityId Long,
+    ktp String maxlength(25),
+    ktpExpDate LocalDate,
+    npwp String maxlength(15),
+    npwpRegDate LocalDate,
+    passport String maxlength(25),
+    passportExpDate LocalDate,
+    kitas String maxlength(30),
+    kitasExpDate LocalDate,
+    birthPlace String maxlength(100),
+    birthDate LocalDate,
+    sex String maxlength(1),
+    maritalStatus String maxlength(1),
+    spouseName String maxlength(100),
+    heir String maxlength(120),
+    heirRalation String maxlength(120),
+    educationBackground String maxlength(1),
+    occupation String maxlength(1),
+    natureOfBusiness String maxlength(120),
+    annualIncome Double,
+    fundSource String maxlength(30),
+    fundSourceText String maxlength(120),
+    description String maxlength(100),
+    investmentObjective String maxlength(10),
+    motherMaidenName String maxlength(100),
+    directSid String maxlength(15),
+    assetOwner String maxlength(1),
+    authPersonKtpRegDate LocalDate,
+    
+    taxId Long,
+    
+    //Tambahan field berdasarkan desain
+    imageKtp String,
+    imageNpwp String,
+    imageSelfieKtp String,
+    
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity AccountInstitution {
+	sid String maxlength(15),
+    companyName String maxlength(100),
+    bicCode String maxlength(20),
+    legalDomicileId Long,
+    npwp String maxlength(100),
+    npwpRegDate LocalDate,
+    skd String maxlength(30),
+    skdExpDate LocalDate,
+    companyEstablishPlace String maxlength(10),
+    companyEstablishDate LocalDate,
+    businessType String maxlength(1),
+    companyChracteristic String maxlength(1),
+    fundSource String maxlength(30),
+    fundSourceText String maxlength(120),
+    articleAssociation String maxlength(120),
+    bussinessRegNo String maxlength(120),
+    financialAsset1 BigDecimal, //(18,4)
+    financialAsset2 BigDecimal, //(18,4)
+    financialAsset3 BigDecimal, //(18,4)
+    operatingProfit1 BigDecimal, //(18,4)
+    operatingProfit2 BigDecimal, //(18,4)
+    operatingProfit3 BigDecimal, //(18,4)
+    description String maxlength(100),
+    investmentObjective String maxlength(100),
+    directSid String maxlength(15),
+    assetOwner String maxlength(1),
+    supDocType String maxlength(1),
+    supDocExpDate LocalDate,
+    
+    taxId Long,
+    
+    //Tambahan field berdasarkan desain
+    imageCertArticleAssociation String,
+    imageMgmtStructure String,
+    imageSiup String,
+    imageCertDomicile String,
+    imageCertIncorporation String,
+    imageNPWP String,
+    imageAuditedFinancial String,
+    imageShareHolder String,
+    companyCharacteristicText String,
+    investmentObjectiveText String,
+    bussinessRegExpDate LocalDate,
+    businessTypeText String,
+    investExperience String maxlength(1),
+    investExperienceText String,
+    businessFields String,
+    businessFieldsText String,
+    companyDomicileStatus String maxlength(1),
+    companyDomicileSince LocalDate,
+    companyWebAddress String,
+    companyEstablishCertificate String,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity AccountMember {
+	registerCode String maxlength(10),
+    accountName String maxlength(100),
+    accountType String maxlength(1),
+    accountAngle Boolean,
+    kseiClientCode String maxlength(4),
+    kseiSubrek String maxlength(15),
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity AccountAddress {
+	addressType String maxlength(1),
+    address1 String maxlength(60),
+    address2 String maxlength(60),
+    address3 String maxlength(60),
+    postalCode String maxlength(5),
+    phone String maxlength(30),
+    mobilePhone String maxlength(30),
+    email String maxlength(256),
+    fax String maxlength(30),
+    
+    countryId Long,
+    provinceId Long,
+    cityId Long,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity AccountAuthorize {
+	firstName String maxlength(35),
+    middleName String maxlength(35),
+    lastName String maxlength(35),
+    position String maxlength(100),
+    ktp String maxlength(25),
+    ktpExpDate LocalDate,
+    npwp String maxlength(15),
+    npwpRegDate LocalDate,
+    passport String maxlength(25),
+    passportExpDate LocalDate,
+    kitas String maxlength(30),
+    kitasExpDate LocalDate,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity AccountBank {
+	bankAccountNo String maxlength(60),
+    bankAccountName String maxlength(100),
+    bankBranch String maxlength(100),
+    status String maxlength(1)
+    
+	currencyId Long,
+	bankId Long,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity AccountReksadana {
+	costPrice BigDecimal, //(18,4)
+    qtyOnHand BigDecimal, //(18,4)
+    qtyDeposit BigDecimal, //(18,4)
+    qtyWithdraw BigDecimal, //(18,4)
+    profitLoss BigDecimal //(18,4)
+}
+
+relationship OneToMany {
+	JenisReksadana to Reksadana
+}
+
+relationship OneToMany {
+	KategoriReksadana to Reksadana
+}
+
+relationship OneToMany {
+	Reksadana to ReksadanaAssetAllocation
+}
+
+relationship OneToMany {
+	Reksadana to ReksadanaTransaction
+}
+
+relationship OneToMany {
+	Reksadana to ReksadanaAsset
+}
+
+relationship OneToMany {
+	Reksadana{sourceRek} to ReksadanaSwitching{reksaSource}
+}
+
+relationship OneToMany {
+	Reksadana{targetRek} to ReksadanaSwitching{reksaTarget}
+}
+
+relationship OneToMany {
+	ReksadanaSwitching{switchingOrder} to ReksadanaTransaction{switching}
+}
+
+relationship OneToOne {
+	 ReksadanaSwitching{orderBuy} to ReksadanaTransaction{buy}
+}
+
+relationship OneToOne {
+	ReksadanaSwitching{orderSell} to ReksadanaTransaction{sell}
+}
+
+relationship OneToMany {
+	AccountMember to AccountAddress
+}
+
+relationship OneToMany {
+	AccountMember to AccountAuthorize
+}
+
+relationship OneToOne {
+	AccountInstitution to AccountMember
+}
+
+relationship OneToOne {
+	AccountIndividu to AccountMember
+}
+
+relationship OneToMany {
+	Reksadana to AccountReksadana
+}
+
+relationship OneToMany {
+	AccountMember to AccountReksadana
+}
+
+relationship OneToMany {
+	AccountMember to AccountBank
+}
+
+paginate ReksadanaSwitching with pagination
+paginate ReksadanaTransaction with pagination
+
+dto * with mapstruct
+
+service all with serviceImpl
