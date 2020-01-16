@@ -1,0 +1,67 @@
+{
+    "name": "VisitorRegisterAccount",
+    "fields": [
+        {
+            "fieldName": "accountType",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1
+        },
+        {
+            "fieldName": "registerId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "accountId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "createSystemDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "createDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createUserId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "lastModificationSystemDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "lastModificationDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastModificationUserId",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "visitor",
+            "otherEntityRelationshipName": "visitorRegisterAccount",
+            "relationshipName": "visitor",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20200116013233",
+    "entityTableName": "visitor_register_account",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "investacoresvc",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix",
+    "microserviceName": "investacoresvc"
+}
