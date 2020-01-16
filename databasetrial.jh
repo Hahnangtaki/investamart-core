@@ -1,0 +1,43 @@
+entity Visitor {
+	email String maxlength(100),
+    password String maxlength(100),
+    mobilePhone String,
+    memberSince LocalDate,
+    memberStatus Integer,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+entity VisitorRegisterAccount {
+	accountType String maxlength(1),
+    
+    registerId Long,
+    accountId Long,
+    
+    createSystemDate LocalDate,
+    createDate ZonedDateTime,
+    createUserId Long,
+    lastModificationSystemDate LocalDate,
+    lastModificationDate ZonedDateTime,
+    lastModificationUserId Long
+}
+
+relationship OneToOne {
+	VisitorRegisterAccount to Visitor 
+}
+
+// Set pagination options
+//paginate Nasabah with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+angularSuffix * with mySuffix
